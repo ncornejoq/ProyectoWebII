@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Deep Down - Galería</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="cave-guideline"></div>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo2.webp" alt="" height="40px" style="border-radius: 5cap;"> DEEP<span>DOWN</span>
+      </a>
+      <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <i class="fa-solid fa-bars-staggered" style="color: #00d2f2; font-size: 1.5rem;"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" id="link-index" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" id="link-nosotros" href="nosotros.html">Ciencia</a></li>
+          <li class="nav-item"><a class="nav-link" id="link-servicios" href="servicios.html">Cuevas</a></li>
+          <li class="nav-item"><a class="nav-link" id="link-galeria" href="galeria.html">Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" id="link-contacto" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1 class="text-cyan text-center mb-5">Galería Fotográfica del Abismo</h1>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="gallery-item"
+          onclick="openPhotoModal('https://i.pinimg.com/736x/77/b7/90/77b79025f46e8d60f80d71dfbcbe54de.jpg', 'Cenote El Pit', 'Los cenotes; del maya dzonot, que significa abismo son depresiones geológicas naturales que se formaron por el colapso de techos de cuevas de piedra caliza. Para la civilización maya eran portales sagrados al inframundo Xibalbá. Hoy en día, ofrecen las aguas más cristalinas del mundo, donde la luz del sol se filtra creando espectáculos visuales únicos haloclinas y rayos de luz láser antes de dar paso a la oscuridad absoluta de las cuevas.')">
+          <img src="https://i.pinimg.com/736x/77/b7/90/77b79025f46e8d60f80d71dfbcbe54de.jpg" alt="Img 1">
+          <div class="gallery-overlay">
+            <h5>Cenote El Pit</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="gallery-item"
+          onclick="openPhotoModal('https://tse1.mm.bing.net/th/id/OIP.6VI2pAmiFfmmCPKEMx8xdgHaE7?cb=thfvnextfalcon2&w=1920&h=1278&rs=1&pid=ImgDetMain&o=7&rm=3', 'Sac Actun', 'Ubicado en la Península de Yucatán, Sac Actun es considerado el sistema de cuevas inundadas más largo del mundo. Con más de 300 kilómetros de pasajes mapeados, este laberinto sumergido conecta cientos de cenotes. Bucear aquí es hacer un viaje al pasado: sus pasadizos resguardan no solo formaciones espectaculares de estalactitas y estalagmitas, sino también restos arqueológicos mayas y fósiles de la megafauna de la era del hielo. Un desafío cumbre para cualquier buceador técnico.')">
+          <img
+            src="https://tse1.mm.bing.net/th/id/OIP.6VI2pAmiFfmmCPKEMx8xdgHaE7?cb=thfvnextfalcon2&w=1920&h=1278&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="Img 2">
+          <div class="gallery-overlay">
+            <h5>Sistema Sac Actun</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="gallery-item"
+          onclick="openPhotoModal('https://estaticos-cdn.prensaiberica.es/clip/f4b157ae-959d-4882-9380-d6b93afd94c6_source-aspect-ratio_default_0.jpg', 'Plura Cave', 'Situada en el valle de Plurdalen, Noruega, Plura es la cueva sumergida más famosa y visitada del norte de Europa. A diferencia de las aguas templadas del Caribe, aquí los buceadores se enfrentan a aguas gélidas que rondan los 2°C a 4°C, lo que exige el uso estricto de trajes secos y sistemas de calefacción. Plura ofrece una visibilidad asombrosa y formaciones de roca de mármol pulidas por la corriente. Es conocida tanto por su majestuosa belleza como por ser un escenario de resiliencia y exploración extrema en condiciones verdaderamente hostiles.')">
+          <img
+            src="https://estaticos-cdn.prensaiberica.es/clip/f4b157ae-959d-4882-9380-d6b93afd94c6_source-aspect-ratio_default_0.jpg"
+            alt="Img 3">
+          <div class="gallery-overlay">
+            <h5>Cueva de Plura</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="photoViewerModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="photoViewerTitle">Visor</h5><button type="button"
+            class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center bg-black"><img id="photoViewerImage" src="" class="img-fluid" alt="Visor">
+        </div>
+        <div class="p-3 bg-navy">
+          <p id="photoViewerDesc" class="mb-0"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
